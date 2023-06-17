@@ -29,7 +29,7 @@ function App() {
         return response.json();
       })
       .then(data => {
-        console.table(data);
+        console.log(data);
       })
       .catch(error => {
         console.error(error);
@@ -45,12 +45,13 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <h1>BUST</h1>
-        <input id='usdotNum' type="text" onChange={onchange} />
+        <h1 style={{"marginTop": "40vh"}}>Find A Truck</h1>
+        <input id='usdotNum' type="text" placeholder='Enter USDOT Number' onChange={onchange} />
         <br />
         <br />
         <button id='submitBtn' type='button' onClick={submitClicked}>Submit</button>
       </div>
+      <p>Right click on this page, click inspect at the bottom of the popup menu, then click console to view data if USDOT number that was entered is valid</p>
     </div>
   );
 }
