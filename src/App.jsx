@@ -59,7 +59,7 @@ function App() {
         return response.json();
       })
       .then(data => {
-        let jsonData = JSON.stringify(data)
+        let jsonData = data.map(obj => obj.legalName)
         resultsPara.textContent += jsonData
         console.log(data);
       })
