@@ -16,6 +16,9 @@ function App() {
   function submitClicked() {
     let url
     let resultsPara = document.querySelector(".results")
+
+    resultsPara.textContent = ""
+    
     if (searchOption === "") {
       alert("Please select a search option and try again.")
       return
