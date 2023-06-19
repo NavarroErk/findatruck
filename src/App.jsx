@@ -29,8 +29,13 @@ function App() {
       console.log("searchOption: " + searchOption);
       url = `https://73.237.65.141:7103/USDOTSearch?USDOT=${textboxValue}`;
       makeApiCall(url);
+    } else if (searchOption === "physicaladdress") {
+      url = `https://73.237.65.141:7103/PhysicalAddressSearch?PhysicalAddress=${textboxValue}`
+      makeApiCall(url);
+    } else if (searchOption === "mcmxff") {
+      url = `https://73.237.65.141:7103/MCMXFFSearch?MCMXFF=${textboxValue}`
+      makeApiCall(url);
     }
-
     // console.log(`usDotNumber: ${usDotNumber}`);
     // let url = `https://saferwebapi.com/v2/usdot/snapshot/${usDotNumber}`;
     /* #region options (only needed for saferwebapi) */
@@ -74,10 +79,11 @@ function App() {
         <h1>Find A Truck</h1>
         <input id='usdotNum' type="text" placeholder='Enter Value' onChange={handleTextboxChange} />
         <select name="searchSelect" id="searchSelect" value={searchOption} onChange={handleFilterChange}>
-          <option value="">Select an Option</option>
+          <option value="usdot">USDOT</option>
           <option value="name">Name</option>
           <option value="phone">Phone</option>
-          <option value="usdot">USDOT</option>
+          <option value="physicaladdress">Physical Address</option>
+          <option value="mcmxff">MC/MX/FF</option>
         </select>
         <button id='submitBtn' type='button' onClick={submitClicked}>Submit</button>
       </div>
