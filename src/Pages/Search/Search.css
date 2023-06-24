@@ -1,0 +1,10 @@
+#searchTitle{
+    margin-top: 40vh;
+    text-align: center;
+}
+.changeSearchMarginTop {
+    margin-top: 10vh !important;
+  }
+#searchDiv{
+    text-align: center;
+}
